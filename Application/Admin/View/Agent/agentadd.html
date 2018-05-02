@@ -1,0 +1,66 @@
+<layout name="layout" />
+
+<div class="main-div">
+    <form name="main_form" method="POST" action="{:U('Agent/agentadd')}" enctype="multipart/form-data">
+        <table cellspacing="1" cellpadding="3" width="100%">
+       		<tr>
+                <td class="label">角色：</td>
+                <td>
+                    <select name="role">                   
+                    <foreach name='roles' item='vo'>
+                        <option value="{$vo['ro_id']}">{$vo['name']}</option>
+                    </foreach>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">姓名：</td>
+                <td>
+                    <input  type="text" name="username" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">密码：</td>
+                <td>
+                    <input type="password" size="25" name="password" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">邮箱：</td>
+                <td>
+                    <input  type="text" name="email" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">电话：</td>
+                <td>
+                    <input  type="text" name="telephone" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">性别：</td>
+                <td>
+                    <!--<input  type="text" name="sex" value="" />-->
+                    <select name="sex">                   
+                        <option value="0">女</option>
+                        <option value="1">男</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">地区：</td>
+                <td>
+                    <input  type="text" name="area" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="99" align="center">
+                    <input type="submit" class="button" value=" 确定 " />
+                    <!--<input type="reset" class="button" value=" 重置 " />-->
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script>
+</script>

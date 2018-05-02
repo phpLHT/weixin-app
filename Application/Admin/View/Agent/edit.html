@@ -1,0 +1,60 @@
+<layout name="layout" />
+
+<div class="main-div">
+    <form name="main_form" method="POST" action="{:U('Agent/edit')}" enctype="multipart/form-data" >
+    	<input type="hidden" name="id" value="<?php echo $list[0]['id']; ?>" />
+        <table cellspacing="1" cellpadding="3" width="100%">
+        	<tr>
+                <td class="label">身份：</td>
+                <td>
+                    <select name="role">                   
+                    <foreach name='rolist' item='vo'>
+                        <option value="{$vo['ro_id']}" <if condition="$vo['ro_id'] eq $list['ro_id']">checked</if>>{$vo['name']}</option>
+                    </foreach>
+                    </select>
+                    
+<!--                	<?php foreach ($roleData as $k => $v): 
+                			if(in_array($v['id'], $rid))
+                				$check = 'checked="checked"';
+                			else 
+                				$check = '';
+                	?>
+                    	<input <?php echo $check; ?> type="checkbox" name="rid[]" value="<?php echo $v['id']; ?>" /><?php echo $v['role_name']; ?>
+                    <?php endforeach; ?>-->
+                </td>
+            </tr>
+            <tr>
+                <td class="label">邮箱：</td>
+                <td>
+                    <input  type="text" name="email" value="{$list[0]['email']}" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">电话：</td>
+                <td>
+                    <input type="text" size="25" name="telephone" value="{$list[0]['telephone']}" />
+                </td>
+            </tr>
+             <tr>
+                <td class="label">性别：</td>
+                <td>
+             <input type="text" size="25" name="sex" value="<if condition="$list[0]['sex'] eq 0">女<else/>男</if>" />
+                </td>
+            </tr>
+             <tr>
+                <td class="label">地区：</td>
+                <td>
+                    <input type="text" size="25" name="area" value="{$list[0]['area']}" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="99" align="center">
+                    <input type="submit" class="button" value=" 确定 " />
+                    <!--<input type="reset" class="button" value=" 重置 " />-->
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script>
+</script>
